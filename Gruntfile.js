@@ -32,14 +32,18 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     css_injector: {
       default_options:{
+        options:{
+          test:true
+        },
         files:{
           'test/fixtures/default.html':[ 'test/fixtures/style-a.css','test/fixtures/style-b.css']
         }
       },
       custom_options:{
         options:{
-          openTag  : "@section('inline-css')",
-          closeTag : '@stop'
+          openTag:"@section('inline-css')",
+          closeTag:'@stop',
+          test:true
         },
         files:{
           'test/fixtures/custom.blade.php':[ 'test/fixtures/style-a.css','test/fixtures/style-b.css']
