@@ -1,0 +1,39 @@
+{
+  "name": "grunt-css-injector",
+  "description": "Injects css from files in the selected tag",
+  "version": "0.1.0",
+  "homepage": "https://github.com/vmol/grunt-css-injector",
+  "author": {
+    "name": "Víctor Molero (Tlmark)",
+    "email": "victor.molero@admark.com",
+    "url": "vmol.es"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vmol/grunt-css-injector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vmol/grunt-css-injector/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/vmol/grunt-css-injector/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
