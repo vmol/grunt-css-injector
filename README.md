@@ -26,11 +26,11 @@ In your project's Gruntfile, add a section named `cssinject` to the data object 
 grunt.initConfig({
   cssinject: {
     options:{
-      openTag  : '<style type="text/css">',
-      closeTag : '</style>',
+      startTag  : '<style type="text/css">',
+      endTag    : '</style>',
     },
     files:{
-      'test/fixtures/default.html':[ 'test/fixtures/style-a.css','test/fixtures/style-b.css']
+      'index.html':[ 'css/style-a.css','css/style-b.css']
     }
   },
 });
@@ -38,47 +38,53 @@ grunt.initConfig({
 
 ### Options
 
-#### options.openTag
+#### options.startTag
 Type: `String`
-Default value: `',  '`
+Default value: `'<style type="text/css">'`
 
-A string value that is used to do something with whatever.
+A string value that is used to finds the start tag of the style in the destination file.
 
 #### options.punctuation
 Type: `String`
-Default value: `'.'`
+Default value: `'</style>'`
 
-A string value that is used to do something else with whatever else.
+A string value that is used to finds the end tag of the style in the destination file.
+
+#### options.test
+Type: `Boolean`
+Default value: `false`
+
+For testing purposes, it will save the final file into `tmp/`.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+In this example, the default options are used injects the code from the css files into the style tag into the index.html.
 
 ```js
 grunt.initConfig({
   cssinject: {
     options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'index.html':[ 'css/style-a.css','css/style-b.css']
     },
   },
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+In this example, custom options are used to injects the css code into custom tag. 
 
 ```js
 grunt.initConfig({
   cssinject: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
+    options:{
+      startTag  : '@section("style")',
+      endTag    : '@stop',
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    files:{
+      'index.blade.php':[ 'css/style-a.css','css/style-b.css']
+    }
   },
 });
 ```
@@ -87,4 +93,4 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+* 2017-02-27 v0.1.0

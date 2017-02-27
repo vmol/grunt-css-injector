@@ -41,8 +41,8 @@ module.exports = function(grunt) {
       },
       custom_options:{
         options:{
-          openTag:"@section('inline-css')",
-          closeTag:'@stop',
+          startTag:"@section('inline-css')",
+          endTag:'@stop',
           test:true
         },
         files:{
@@ -51,8 +51,8 @@ module.exports = function(grunt) {
       },
       custom_multiple:{
         options:{
-          openTag:"@section('inline-css')",
-          closeTag:'@stop',
+          startTag:"@section('inline-css')",
+          endTag:'@stop',
           test:true
         },
         files:{

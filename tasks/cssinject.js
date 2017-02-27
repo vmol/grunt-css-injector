@@ -24,8 +24,8 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('cssinject', 'Injects css from files in the selected tag', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      openTag  : '<style type="text/css">',
-      closeTag : '</style>',
+      startTag  : '<style type="text/css">',
+      endTag : '</style>',
       test     : false
     });
 
@@ -46,14 +46,14 @@ module.exports = function(grunt) {
       var htmlSource = grunt.file.read(file.dest);
 
       // Get the open tag index
-      var openTagIndex = getTagIndex(options.openTag, htmlSource);
-      var htmlHead = htmlSource.substr(0,openTagIndex + options.openTag.length);
+      var startTagIndex = getTagIndex(options.startTag, htmlSource);
+      var htmlHead = htmlSource.substr(0,startTagIndex + options.startTag.length);
 
       // The rest of the html code
-      var htmlFooter = htmlSource.substr(openTagIndex + options.openTag.length);
+      var htmlFooter = htmlSource.substr(startTagIndex + options.startTag.length);
       // Get de close tag index
-      var closeTagIndex = getTagIndex(options.closeTag, htmlFooter);
-      htmlFooter = htmlFooter.substr(closeTagIndex);
+      var endTagIndex = getTagIndex(options.endTag, htmlFooter);
+      htmlFooter = htmlFooter.substr(endTagIndex);
       
       // The final code      
       var destHtmlSource = htmlHead+cssSource+htmlFooter;
