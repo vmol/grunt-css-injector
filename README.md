@@ -59,7 +59,7 @@ For testing purposes, it will save the final file into `tmp/`.
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used injects the code from the css files into the style tag into the index.html.
+In this example, the default options are used injects the code from the css files into the style tag on index.html.
 
 ```js
 grunt.initConfig({
