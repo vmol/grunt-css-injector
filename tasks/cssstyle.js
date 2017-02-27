@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     }
   };
 
-  grunt.registerMultiTask('cssinject', 'Injects css from files in the selected tag', function() {
+  grunt.registerMultiTask('cssstyle', 'Injects css from files in the selected tag', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       startTag  : '<style type="text/css">',

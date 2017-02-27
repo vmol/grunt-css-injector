@@ -1,11 +1,11 @@
 {
-  "name": "grunt-css-injector",
+  "name": "grunt-css-style",
   "description": "Injects css from files into the selected tag on the destination file",
   "version": "0.1.0",
-  "homepage": "https://github.com/vmol/grunt-css-injector",
+  "homepage": "https://github.com/vmol/grunt-css-style.git",
   "author": {
-    "name": "Víctor Molero (Tlmark)",
-    "email": "victor.molero@admark.com",
+    "name": "Víctor Molero",
+    "email": "victormol@gmail.com",
     "url": "vmol.es"
   },
   "repository": {

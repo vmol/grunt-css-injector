@@ -22,7 +22,7 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
-exports.css_injector = {
+exports.cssstyle = {
   setUp: function(done) {
     // setup here if necessary
     done();

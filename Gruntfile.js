@@ -1,8 +1,8 @@
 /*
- * grunt-css-injector
- * https://github.com/vmol/grunt-css-injector
+ * grunt-css-style
+ * https://github.com/vmol/grunt-css-style.git
  *
- * Copyright (c) 2017 Víctor Molero (Tlmark)
+ * Copyright (c) 2017 Víctor Molero Martín
  * Licensed under the MIT license.
  */
 
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    cssinject: {
+    cssstyle: {
       default_options:{
         options:{
           test:true
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'cssinject', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'cssstyle', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
