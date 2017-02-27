@@ -1,6 +1,6 @@
 # grunt-css-injector
 
-> Injects css from files in the selected tag
+> Injects the css code from the selected files into the first style tag of the destination file.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -17,27 +17,28 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-css-injector');
 ```
 
-## The "css_injector" task
+## The "cssinject" task
 
 ### Overview
-In your project's Gruntfile, add a section named `css_injector` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `cssinject` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  css_injector: {
-    options: {
-      // Task-specific options go here.
+  cssinject: {
+    options:{
+      openTag  : '<style type="text/css">',
+      closeTag : '</style>',
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
+    files:{
+      'test/fixtures/default.html':[ 'test/fixtures/style-a.css','test/fixtures/style-b.css']
+    }
   },
 });
 ```
 
 ### Options
 
-#### options.separator
+#### options.openTag
 Type: `String`
 Default value: `',  '`
 
@@ -56,7 +57,7 @@ In this example, the default options are used to do something with whatever. So 
 
 ```js
 grunt.initConfig({
-  css_injector: {
+  cssinject: {
     options: {},
     files: {
       'dest/default_options': ['src/testing', 'src/123'],
@@ -70,7 +71,7 @@ In this example, custom options are used to do something else with whatever else
 
 ```js
 grunt.initConfig({
-  css_injector: {
+  cssinject: {
     options: {
       separator: ': ',
       punctuation: ' !!!',
