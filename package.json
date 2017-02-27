@@ -1,8 +1,8 @@
 {
-  "name": "grunt-css-style",
+  "name": "grunt-css-styler",
   "description": "Injects css from files into the selected tag on the destination file",
   "version": "0.1.0",
-  "homepage": "https://github.com/vmol/grunt-css-style.git",
+  "homepage": "https://github.com/vmol/grunt-css-styler.git",
   "author": {
     "name": "Víctor Molero",
     "email": "victormol@gmail.com",

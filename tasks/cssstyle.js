@@ -1,8 +1,8 @@
 /*
- * grunt-css-injector
- * https://github.com/vmol/grunt-css-injector
+ * grunt-css-styler
+ * https://github.com/vmol/grunt-css-styler.git
  *
- * Copyright (c) 2017 Víctor Molero (adMark)
+ * Copyright (c) 2017 Víctor Molero Martín
  * Licensed under the MIT license.
  */
 
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     }
   };
 
-  grunt.registerMultiTask('cssstyle', 'Injects css from files in the selected tag', function() {
+  grunt.registerMultiTask('cssstyler', 'Injects css from files in the selected tag', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       startTag  : '<style type="text/css">',

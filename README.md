@@ -1,4 +1,4 @@
-# grunt-css-injector
+# grunt-css-styler
 
 > Injects the css code from the selected files into the first style tag of the destination file.
 
@@ -8,23 +8,23 @@ This plugin requires Grunt `~0.4.5`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-css-injector --save-dev
+npm install grunt-css-styler --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-css-injector');
+grunt.loadNpmTasks('grunt-css-styler');
 ```
 
-## The "cssinject" task
+## The "cssstyler" task
 
 ### Overview
-In your project's Gruntfile, add a section named `cssinject` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `cssstyler` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  cssinject: {
+  cssstyler: {
     options:{
       startTag  : '<style type="text/css">',
       endTag    : '</style>',
@@ -63,7 +63,7 @@ In this example, the default options are used injects the code from the css file
 
 ```js
 grunt.initConfig({
-  cssinject: {
+  cssstyler: {
     options: {},
     files: {
       'index.html':[ 'css/style-a.css','css/style-b.css']
@@ -77,7 +77,7 @@ In this example, custom options are used to injects the css code into custom tag
 
 ```js
 grunt.initConfig({
-  cssinject: {
+  cssstyler: {
     options:{
       startTag  : '@section("style")',
       endTag    : '@stop',
