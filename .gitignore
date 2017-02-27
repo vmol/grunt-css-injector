@@ -1,3 +1,5 @@
 node_modules
 npm-debug.log
 tmp
+grunt-css-injector.sublime-project
+grunt-css-injector.sublime-workspace
