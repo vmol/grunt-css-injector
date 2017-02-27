@@ -16,12 +16,12 @@ module.exports = function(grunt) {
     if (index === -1){
       grunt.fail.warn('The selected string "'+tag+'" can\'t be found.');
     }else{
-      grunt.log.write('The index for '+tag+' is: '+index+'\n');
+      //grunt.log.write('The index for '+tag+' is: '+index+'\n');
       return index;
     }
   };
 
-  grunt.registerMultiTask('css_injector', 'Injects css from files in the selected tag', function() {
+  grunt.registerMultiTask('cssinject', 'Injects css from files in the selected tag', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       openTag  : '<style type="text/css">',
