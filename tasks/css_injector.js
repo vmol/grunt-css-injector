@@ -42,13 +42,20 @@ module.exports = function(grunt) {
         return grunt.file.read(filepath);
       }).join('');
 
+      // Reads the destination file
       var htmlSource = grunt.file.read(file.dest);
+
+      // Get the open tag index
       var openTagIndex = getTagIndex(options.openTag, htmlSource);
-      var closeTagIndex = getTagIndex(options.closeTag, htmlSource);
-
       var htmlHead = htmlSource.substr(0,openTagIndex + options.openTag.length);
-      var htmlFooter = htmlSource.substr(closeTagIndex);
 
+      // The rest of the html code
+      var htmlFooter = htmlSource.substr(openTagIndex + options.openTag.length);
+      // Get de close tag index
+      var closeTagIndex = getTagIndex(options.closeTag, htmlFooter);
+      htmlFooter = htmlFooter.substr(closeTagIndex);
+      
+      // The final code      
       var destHtmlSource = htmlHead+cssSource+htmlFooter;
 
       // Only for testing purposes

@@ -48,6 +48,16 @@ module.exports = function(grunt) {
         files:{
           'test/fixtures/custom.blade.php':[ 'test/fixtures/style-a.css','test/fixtures/style-b.css']
         }
+      },
+      custom_multiple:{
+        options:{
+          openTag:"@section('inline-css')",
+          closeTag:'@stop',
+          test:true
+        },
+        files:{
+          'test/fixtures/custom-multiple.blade.php':[ 'test/fixtures/style-a.css','test/fixtures/style-b.css']
+        }
       }
     },
 

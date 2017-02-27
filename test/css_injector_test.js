@@ -32,7 +32,7 @@ exports.css_injector = {
 
     var actual = grunt.file.read('tmp/test/fixtures/default.html');
     var expected = grunt.file.read('test/expected/default.html');
-    test.equal(actual, expected, 'should describe what the default behavior is.');
+    test.equal(actual, expected, 'Should inject the css code from the files in the style tag.');
 
     test.done();
   },
@@ -41,8 +41,17 @@ exports.css_injector = {
 
     var actual = grunt.file.read('tmp/test/fixtures/custom.blade.php');
     var expected = grunt.file.read('test/expected/custom.blade.php');
-    test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
+    test.equal(actual, expected, 'Should inject the css code from the files into the custom tag.');
 
     test.done();
   },
+  testWithMultipleCuston:function(test) {
+
+    test.expect(1);
+    var actual = grunt.file.read('tmp/test/fixtures/custom-multiple.blade.php');    
+    var expected = grunt.file.read('test/expected/custom-multiple.blade.php');
+    test.equal(actual, expected, 'Should inject the css code from the files into the custom tag.');
+
+    test.done();
+  }
 };
